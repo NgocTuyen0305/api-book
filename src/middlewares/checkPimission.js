@@ -12,7 +12,7 @@ export const checkPermission = async (req, res, next) => {
     const token = req.headers.authorization.split(" ")[1];
     jwt.verify(
       token,
-      process.env.MONGO_URL,
+      process.env.JWT_SECRET,
       async (error, payload) => {
         if (error) {
           if (error.name == "TokenExpiredError") {

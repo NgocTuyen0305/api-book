@@ -63,7 +63,7 @@ export const signin = async (req, res) => {
         message: "Mật khẩu không đúng",
       });
     }
-    const token = jwt.sign({ id: user._id }, process.env.MONGO_URL, { expiresIn: "1d" });
+    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: "1d" });
     
     console.log('headers: ',req.headers.authorization);
     return res.status(200).json({
