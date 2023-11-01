@@ -16,6 +16,8 @@ export default defineConfig(() => {
                 swcOptions: {},
             }),
         ],
-        optimizeDeps: {},
+        optimizeDeps: {
+            include: ['src/app.js'],
+          },
     };
 });
