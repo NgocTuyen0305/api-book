@@ -5,8 +5,8 @@
   "main": "app.js",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "start": "vite"
+    "start": "vite",
+    "dev": "vite"
   },
   "devDependencies": {
     "nodemon": "^2.0.21",
