@@ -8,10 +8,7 @@ export default defineConfig(() => {
       port: 5000,
     },
     build: {
-      ssr: "index.js",
       outDir: "dist",
-      emptyOutDir: true,
-      minify: true,
     },
     plugins: [
       ...VitePluginNode({
