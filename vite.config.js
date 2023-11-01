@@ -1,11 +1,17 @@
 import { defineConfig } from "vite";
 import { VitePluginNode } from "vite-plugin-node";
-
+import {resolve} from 'path'
 export default defineConfig(() => {
     return {
         root: "src",
         server: {
             port: 5000,
+        },
+        build: {
+            ssr: "index.ts",
+            outDir: "../dist",
+            emptyOutDir: true,
+            minify: true
         },
         plugins: [
             ...VitePluginNode({
@@ -16,8 +22,10 @@ export default defineConfig(() => {
                 swcOptions: {},
             }),
         ],
-        optimizeDeps: {
-            include: ['src/app.js'],
-          },
+          resolve: {
+            alias: {
+                "@": resolve(__dirname, "src"),
+            },
+        },
     };
 });
