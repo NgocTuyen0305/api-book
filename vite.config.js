@@ -25,5 +25,10 @@ export default defineConfig(() => {
     optimizeDeps: {
       include: ["express"],
     },
+    resolve: {
+      alias: {
+        "@": resolve(__dirname, "src"),
+      },
+    },
   };
 });
