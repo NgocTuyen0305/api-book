@@ -9,10 +9,10 @@ export default defineConfig(() => {
     },
     build: {
       ssr: "index.js",
-      outDir: "dist",
+      outDir: "../dist",
       emptyOutDir: true,
-      minify: true,
-    },
+      minify: true
+  },
     plugins: [
       ...VitePluginNode({
         adapter: "express",
@@ -27,8 +27,8 @@ export default defineConfig(() => {
     },
     resolve: {
       alias: {
-        "@": resolve(__dirname, "src"),
+          "@": resolve(__dirname, "src"),
       },
-    },
+  },
   };
 });
