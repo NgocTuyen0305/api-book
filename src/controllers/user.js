@@ -1,5 +1,5 @@
-import User from "../models/user";
-import Order from "../models/order";
+import User from "../models/user.js";
+import Order from "../models/order.js";
 
 export const updateProfile = async (req, res) => {
   try {

@@ -1,7 +1,7 @@
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-import User from "../models/user";
-import { signinSchema, signupSchema } from "../schemas/auth";
+import User from "../models/user.js";
+import { signinSchema, signupSchema } from "../schemas/auth.js";
 import dotenv from "dotenv";
 dotenv.config();
 //Đăng kí tài khoản

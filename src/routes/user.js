@@ -1,6 +1,6 @@
 import express from "express";
-import { checkPermission } from "../middlewares/checkPimission";
-import { updateProfile,getProfile, getAllProfile } from "../controllers/user";
+import { checkPermission } from "../middlewares/checkPimission.js";
+import { updateProfile,getProfile, getAllProfile } from "../controllers/user.js";
 
 const router = express.Router();
 

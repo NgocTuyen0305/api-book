@@ -1,6 +1,6 @@
 import express from "express";
-import { createOrderProduct, getAllOrder, getOrder, removeOrder, updateOrder } from "../controllers/order";
-import { checkPermission } from "../middlewares/checkPimission";
+import { createOrderProduct, getAllOrder, getOrder, removeOrder, updateOrder } from "../controllers/order.js";
+import { checkPermission } from "../middlewares/checkPimission.js";
 
 const router = express.Router();
 router.post("/create-order", createOrderProduct);

@@ -1,6 +1,4 @@
-import cloudinary from "../config/cloudinary";
-import Products from "../models/product";
-import Upload from '../models/upload'
+import cloudinary from "../config/cloudinary.js";
 export const uploadImage = async (req, res) => {
   const files = req.files;
   // const producId = req.params.id;

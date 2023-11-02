@@ -1,4 +1,4 @@
-import Slider from '../models/slider'
+import Slider from '../models/slider.js'
 export const create = async(req,res)=>{
   try {
     const slider = await Slider.create(req.body);

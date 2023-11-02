@@ -1,7 +1,7 @@
-import Feedback from "../models/feedback";
-import Product from "../models/product";
-import User from "../models/user";
-import Order from "../models/order";
+import Feedback from "../models/feedback.js";
+import Product from "../models/product.js";
+import User from "../models/user.js";
+import Order from "../models/order.js";
 
 export const getAll = async (req, res) => {
   try {

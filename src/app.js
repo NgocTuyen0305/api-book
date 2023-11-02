@@ -1,14 +1,14 @@
 import express from "express";
-import connectDB from './config/database'
+import connectDB from './config/database.js';
 import dotenv from "dotenv";
-import productRouter from "./routes/product";
-import categoryRouter from "./routes/category";
-import authRouter from "./routes/auth";
-import uploadRouter from "./routes/upload";
-import profileRouter from "./routes/user";
-import orderRouter from "./routes/order";
-import feedbackRouter from "./routes/feedback";
-import sliderRouter from "./routes/slider";
+import productRouter from "./routes/product.js";
+import categoryRouter from "./routes/category.js";
+import authRouter from "./routes/auth.js";
+import uploadRouter from "./routes/upload.js";
+import profileRouter from "./routes/user.js";
+import orderRouter from "./routes/order.js";
+import feedbackRouter from "./routes/feedback.js";
+import sliderRouter from "./routes/slider.js";
 import cors from "cors";
 dotenv.config();
 const app = express();
@@ -34,6 +34,6 @@ app.get('/', (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server started on port ${PORT}`);
+  console.log(`>>>Server started on port ${PORT}`);
 });
-export const viteNodeApp = app;
+// export const viteNodeApp = app;
