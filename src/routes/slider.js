@@ -4,6 +4,6 @@ import { checkPermission } from "../middlewares/checkPimission.js";
 
 const router = express.Router();
 
-router.get("/get-slider", checkPermission, get);
+router.get("/get-slider", get);
 router.post("/create-slider", checkPermission, create);
 export default router;
