@@ -22,8 +22,8 @@ export const get = async (req, res) => {
     const feedbacks = await Feedback.find({ productId })
       .populate("userId", "name")
       .sort({ createdAt: -1 });
-
-    if (!feedbacks) {
+    // console.log('feeback: ',feedbacks)
+    if (feedbacks.length === 0) {
       return res.status(400).json("Không tìm thấy feedback");
     }
     return res
@@ -50,11 +50,21 @@ export const create = async (req, res) => {
     if (!isCheck) {
       return res
         .status(400)
-        .json("Bạn chưa mua hàng hoặc chưa đơn hàng chưa được giao!");
+        .json("Bạn chưa mua hàng hoặc đơn hàng chưa được giao!");
     }
-    // console.log('order check id: ',isCheck)
-
     const feedback = await Feedback.create(req.body);
+    if (feedback) {
+      const productFeedback = await Feedback.find({ productId });
+      const totalRating = productFeedback.reduce(
+        (total, item) => total + item.rating,
+        0
+      );
+      const lengthFeedback = productFeedback.length;
+      const averageRating = totalRating / lengthFeedback;
+      await Product.findByIdAndUpdate(productId, {
+        $set: { rate: averageRating },
+      });
+    }
     if (!feedback) {
       return res.status(400).json("Không tìm thấy đánh giá");
     }

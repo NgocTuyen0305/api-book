@@ -22,8 +22,8 @@ const productsSchema = new mongoose.Schema(
       require: true,
     },
     rate: {
-      type: Number,
-      require: true,
+      type: mongoose.Schema.Types.Number,
+      ref: "Feedback",
     },
     sold: {
       type: Number,
